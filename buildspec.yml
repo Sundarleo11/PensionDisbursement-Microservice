@@ -16,7 +16,7 @@ phases:
     - echo Building Java
     - mvn clean
     - echo Building the docker image..
-    - docker docker build -t pms-pention-dis-rep .
+    - docker build -t pms-pention-dis-rep .
     - docker tag pms-pention-dis-rep:latest 156962844638.dkr.ecr.us-east-1.amazonaws.com/pms-pention-dis-rep:first
   post_build:
     commands:
