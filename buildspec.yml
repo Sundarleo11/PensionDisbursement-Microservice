@@ -16,15 +16,15 @@ phases:
     - echo Building Java
     - mvn clean
     - echo Building the docker image..
-    - docker build -t pms-pention-dis-rep .
-    - docker tag pms-pention-dis-rep:there 156962844638.dkr.ecr.us-east-1.amazonaws.com/pms-pention-dis-rep:there
+    - docker build -t pms-890536-pensiondisbursement .
+    - docker tag pms-890536-pensiondisbursement:latest 156962844638.dkr.ecr.us-east-1.amazonaws.com/pms-890536-pensiondisbursement:latest
   post_build:
     commands:
     - echo Build completed on `date`
     - echo Pushing docker image
-    - docker push 156962844638.dkr.ecr.us-east-1.amazonaws.com/pms-pention-dis-rep:there
+    - docker push 156962844638.dkr.ecr.us-east-1.amazonaws.com/pms-890536-pensiondisbursement:latest
     - echo Writting definition file
-    - printf '[{"name":"pms-pention-dis-rep","imageUri":"%s"}]' 156962844638.dkr.ecr.us-east-1.amazonaws.com/pms-pention-dis-rep:there > imagedefinitions.json
+    - printf '[{"name":"pms-pention-dis-rep","imageUri":"%s"}]' 156962844638.dkr.ecr.us-east-1.amazonaws.com/pms-890536-pensiondisbursement:latest > imagedefinitions.json
 artifacts:
   files:
-  - pms-pention-dis-rep/imagedefinitions.json
+  - pensiondisbursement/imagedefinitions.json
