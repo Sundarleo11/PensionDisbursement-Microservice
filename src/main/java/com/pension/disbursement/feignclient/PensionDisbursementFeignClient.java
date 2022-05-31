@@ -12,7 +12,7 @@ import com.pension.disbursement.model.PensionerDetail;
 import io.swagger.annotations.ApiParam;
 
 //@FeignClient(name ="PensionerDetail-Microservice",url = "http://localhost:6001/pensioner/api")
-@FeignClient(name ="PensionerDetail-Microservice",url = "http://890536-pensionerdetail-lb-1961886833.us-east-1.elb.amazonaws.com/pensioner/api")
+@FeignClient(name ="PensionerDetail-Microservice",url = "http://890536-pensionerdetail-lb-225605268.us-east-1.elb.amazonaws.com/pensioner/api")
 public interface PensionDisbursementFeignClient {
 	
 	@GetMapping("/PensionerDetailByAadhaar/{aadharNumber}")
